@@ -1,0 +1,33 @@
+Retrieval Augmented Generation - RAG
+Indexing -  Indexing is the first and most critical phase of a RAG pipeline. It is the process of preparing, processing, and storing your documents in a way that makes them fast and efficient to search later during retrieval
+So what this does is that it splits the documents and assigns the tokens and then converts it into vectors
+Retrieval - Retrieval is the second phase of the RAG pipeline. When a user asks a question, the system searches the vector database to find the most relevant chunks that were indexed earlier and passes them to the LLM to generate an answer.
+In this what we do is that we store the documents in a 3D vector space and then we search the question that 3D space and if there is similarity or has neighbours it grabs ones which are close
+Generation - Generation is the third and final phase of the RAG pipeline. After relevant chunks are retrieved from the vector database, they are passed to the LLM along with the user's question to generate an accurate, context-aware answer.
+
+Multi Query Translation is an advanced retrieval technique where the original user query is transformed, expanded, or rewritten into multiple different versions before retrieval to improve the quality and coverage of retrieved chunks.
+Query Translation rag fusion - RAG Fusion is an advanced query translation technique that extends multi-query retrieval by adding a smart reranking step called Reciprocal Rank Fusion (RRF). It generates multiple query variations, retrieves chunks for each, and then intelligently merges and reranks all results into a single ranked list.
+Query decomposition - Query Decomposition is a query translation technique where a complex, multi-part question is broken down into simpler sub-questions that are answered individually and then combined into a final comprehensive answer. 
+Step back query translation - In RAG (Retrieval-Augmented Generation), the query translation step (step back prompting) is a technique used to improve retrieval quality when the user’s query is too specific, unclear, or narrow.
+Hyde query translation - HyDE (Hypothetical Document Embeddings) is a query translation technique used in Retrieval-Augmented Generation (RAG) where instead of directly searching with the user’s query, the system: Generates a fake (hypothetical) answer first → then uses that answer to retrieve real documents
+
+
+ROUTING- Routing in RAG is the process of directing a user query to the most appropriate handling path, such as a retriever, tool, or direct LLM response. It analyzes query intent and selects the best pipeline, improving accuracy, reducing cost, and ensuring efficient use of resources in answering different types of queries. 
+SEMANTIC ROUTING -  Semantic prompting in routing uses the meaning of a query (not just keywords) to decide where it should be sent in a RAG system. An LLM interprets intent and context, then routes the query to the most suitable retriever, tool, or response path, improving accuracy, relevance, and efficiency in handling diverse queries.
+
+
+
+Query Structuring - Query structuring in RAG is the process of converting a user’s raw query into a clear, organized format before retrieval.
+It involves:
+breaking the query into key parts
+identifying intent and entities
+adding filters or constraints
+reformulating for better search
+This improves retrieval accuracy and ensures relevant documents are fetched for generating better answers.
+
+INDEXING IN RAG - 
+Multi representation indexing-Multirepresentation indexing is a retrieval strategy where a single document is indexed in multiple different forms simultaneously, so that queries can match against whichever representation is most useful.
+
+Raptor indexing - RAPTOR (Recursive Abstractive Processing for Tree-Organized Retrieval) is a hierarchical indexing method that builds a tree of summaries over your documents — enabling retrieval at multiple levels of abstraction simultaneously.RAG: flat chunk retrieval is bad at answering questions that require synthesizing information across many chunks.
+
+Colbert indexing - ColBERT (Contextualized Late Interaction over BERT) is a retrieval model that stores token-level embeddings for every document — instead of compressing an entire chunk into one single vector. This gives it significantly higher retrieval precision than standard dense retrieval.
